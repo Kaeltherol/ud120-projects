@@ -10,10 +10,13 @@
     Chris has label 1
 """
     
+import os
 import sys
 from time import time
-sys.path.append("../tools/")
+os.chdir("C:\\Python\\MyRepo\\ud120-projects\\tools")    
+sys.path.append(r"../tools/")
 from email_preprocess import preprocess
+from classifier import classifier
 
 
 ### features_train and features_test are the features for the training
@@ -25,7 +28,9 @@ features_train, features_test, labels_train, labels_test = preprocess()
 ##############################################################
 # Enter Your Code Here
 
+from sklearn.naive_bayes import GaussianNB
 
+pred_label, acc_score, tot_time = classifier(features_train,labels_train,features_test,labels_test,GaussianNB())
 
 ##############################################################
 
