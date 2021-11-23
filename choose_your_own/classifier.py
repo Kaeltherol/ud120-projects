@@ -20,4 +20,4 @@ def classifier(features_train,labels_train,features_test,labels_test,chosen_clas
     print(f'Pred time: {pred_time} s')
     print(f'Total time: {total_time} s\n')
 
-    return pred, acc, total_time
+    return clf, pred, acc, total_time
